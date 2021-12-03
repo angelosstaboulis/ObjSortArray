@@ -12,16 +12,19 @@
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) initialValues{
     _dark = FALSE;
+    _sortArray = [[SortArray alloc] init];
     _array = [[NSMutableArray alloc] init];
-    [_mainTableView setDelegate:self];
-    [_mainTableView setDataSource:self];
     for(int item=0;item<10;item++){
         [_array addObject:[NSString stringWithFormat:@"%d",arc4random_uniform(1000)]];
     }
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initialValues];
+    [_mainTableView setDelegate:self];
+    [_mainTableView setDataSource:self];
     // Do any additional setup after loading the view.
 }
 
@@ -37,24 +40,20 @@
     return cell;
 }
 - (IBAction)btnSort:(id)sender {
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"intValue" ascending:TRUE];
-    [_array sortUsingDescriptors:@[descriptor]];
-    
+    NSSortDescriptor *sort = [_sortArray makeSortArray];
+    [_array sortUsingDescriptors:@[sort]];
     [_mainTableView reloadData];
 }
 
 - (IBAction)btnDarkMode:(id)sender {
     if(_dark == FALSE){
-        UIApplication *app = [UIApplication sharedApplication];
-        SceneDelegate *scene = (SceneDelegate *) [[[[app connectedScenes] allObjects] firstObject] delegate];
-        [scene.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleDark];
+        [_sortArray switchBlackMode:_dark];
         _dark = TRUE;
     }
     else{
+        [_sortArray switchBlackMode:_dark];
         _dark = FALSE;
-        UIApplication *app = [UIApplication sharedApplication];
-        SceneDelegate *scene = (SceneDelegate *) [[[[app connectedScenes] allObjects] firstObject] delegate];
-        [scene.window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
+        
     }
     
     
@@ -62,9 +61,7 @@
 
 - (IBAction)btnRandomNumbers:(id)sender {
     [_array removeAllObjects];
-    for(int item=0;item<10;item++){
-        [_array addObject:[NSString stringWithFormat:@"%d",arc4random_uniform(1000)]];
-    }
+    [_array addObjectsFromArray:[_sortArray makeRandomNumbers]];
     [_mainTableView reloadData];
- }
+}
 @end

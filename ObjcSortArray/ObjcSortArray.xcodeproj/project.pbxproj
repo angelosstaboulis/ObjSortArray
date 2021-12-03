@@ -17,6 +17,7 @@
 		D60C6B342752FFD6004B586C /* ObjcSortArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C6B332752FFD6004B586C /* ObjcSortArrayTests.m */; };
 		D60C6B3E2752FFD6004B586C /* ObjcSortArrayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C6B3D2752FFD6004B586C /* ObjcSortArrayUITests.m */; };
 		D60C6B402752FFD6004B586C /* ObjcSortArrayUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D60C6B3F2752FFD6004B586C /* ObjcSortArrayUITestsLaunchTests.m */; };
+		D67A43D0275AD0C800155DE1 /* SortArray.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A43CF275AD0C800155DE1 /* SortArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		D60C6B392752FFD6004B586C /* ObjcSortArrayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObjcSortArrayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C6B3D2752FFD6004B586C /* ObjcSortArrayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcSortArrayUITests.m; sourceTree = "<group>"; };
 		D60C6B3F2752FFD6004B586C /* ObjcSortArrayUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcSortArrayUITestsLaunchTests.m; sourceTree = "<group>"; };
+		D67A43CE275AD0C800155DE1 /* SortArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SortArray.h; sourceTree = "<group>"; };
+		D67A43CF275AD0C800155DE1 /* SortArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SortArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				D60C6B252752FFD6004B586C /* LaunchScreen.storyboard */,
 				D60C6B282752FFD6004B586C /* Info.plist */,
 				D60C6B292752FFD6004B586C /* main.m */,
+				D67A43CE275AD0C800155DE1 /* SortArray.h */,
+				D67A43CF275AD0C800155DE1 /* SortArray.m */,
 			);
 			path = ObjcSortArray;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67A43D0275AD0C800155DE1 /* SortArray.m in Sources */,
 				D60C6B1F2752FFD4004B586C /* ViewController.m in Sources */,
 				D60C6B192752FFD4004B586C /* AppDelegate.m in Sources */,
 				D60C6B2A2752FFD6004B586C /* main.m in Sources */,
